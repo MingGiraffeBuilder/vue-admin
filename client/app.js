@@ -14,6 +14,7 @@ Vue.use(NProgress)
 
 // Enable devtools
 Vue.config.devtools = true
+Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
 
 sync(store, router)
 

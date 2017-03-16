@@ -9,12 +9,10 @@
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo.svg" :alt="pkginfo.description">
-            <tooltip :label="'v' + pkginfo.version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
+            <img src="~assets/logo-short.png" :alt="pkginfo.description">
               <div class="is-hidden-mobile">
-                <span class="vue">Vue</span><strong class="admin">Admin</strong>
+                <span class="vue">GiraffeBuilder</span><strong class="admin">Admin</strong>
               </div>
-            </tooltip>
           </a>
         </div>
         <div class="nav-right is-flex"></div>
