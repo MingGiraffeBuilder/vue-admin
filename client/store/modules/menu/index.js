@@ -4,6 +4,7 @@ import charts from './charts'
 import uifeatures from './uifeatures'
 import components from './components'
 import tables from './tables'
+import projects from './projects'
 
 // show: meta.label -> name
 // name: component name
@@ -29,6 +30,7 @@ const state = {
       },
       component: lazyLoading('axios', true)
     },
+    projects,
     charts,
     uifeatures,
     components,
