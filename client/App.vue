@@ -64,9 +64,21 @@ export default {
 
 $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
-
+$color-primary: #009bfd;
+$color-primary-hover: #33aaf5;
 html {
   background-color: whitesmoke;
+}
+
+a, .nav-item.hero-brand .vue{
+  color: $color-primary;
+}
+
+.button.is-primary,.button.is-primary.is-active,.menu-list a.is-active{
+  background-color: $color-primary;
+}
+.button.is-primary:hover{
+  background-color: $color-primary-hover;
 }
 
 .nprogress-container {

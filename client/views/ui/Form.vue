@@ -70,12 +70,12 @@
               </label>
             </p>
             <p class="control">
-              <label class="radio is-disabled">
-                <input type="radio" name="question" disabled>
+              <label class="radio ">
+                <input type="radio" name="question" >
                 Yes
               </label>
-              <label class="radio is-disabled">
-                <input type="radio" name="question" disabled>
+              <label class="radio ">
+                <input type="radio" name="question" >
                 No
               </label>
             </p>
