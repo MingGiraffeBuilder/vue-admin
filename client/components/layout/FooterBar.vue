@@ -2,8 +2,12 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p><a :href="'https://giraffebuilder.com'">GiraffeBuilder</a></p>
-        <p>Code licensed under <a :href="'https://github.com/' + repository + '/blob/master/LICENSE'">{{ license }}</a>.</p>
+         <p>
+          <img width="50" src="~assets/logo-short.png" :alt="description">
+        </p>
+        <p>© 2017 <a :href="'https://giraffebuilder.com'">GiraffeBuilder</a>. All Rights Reserved
+          <p>515 S. Flower St. Ste. 3600</p>
+          <p>Los Angeles, CA 90071</p>
       </div>
     </div>
   </footer>
@@ -23,8 +27,10 @@ export default {
 @import '~bulma/sass/utilities/mixins';
 
 .footer {
-  margin-left: 180px;
-  
+  // margin-left: 180px;
+  padding: 1.5rem;
+  border-top: 3px solid #cccccc;
+  background-color: #efefef;
   @include mobile() {
     margin-left: 0;
   }
