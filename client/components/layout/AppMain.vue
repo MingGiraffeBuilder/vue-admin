@@ -23,7 +23,7 @@
   @import '~bulma/sass/utilities/variables';
   @import '~bulma/sass/utilities/mixins';
   .app-main {
-    padding-top: 50px;
+    padding-top: 100px;
     margin-left: 180px;
     transform: translate3d(0, 0, 0);
     @include mobile() {

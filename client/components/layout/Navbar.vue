@@ -8,11 +8,8 @@
           </a>
         </div>
         <div class="nav-center">
-          <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo-short.png" :alt="pkginfo.description">
-              <div class="is-hidden-mobile">
-                <span class="vue">GiraffeBuilder</span><strong class="admin">Admin</strong>
-              </div>
+          <a class="nav-item hero-brand" href="https://giraffebuilder.com" target="_blank">
+            <img src="~assets/logo-long.png" :alt="pkginfo.description">
           </a>
         </div>
         <div class="nav-right is-flex"></div>
@@ -54,7 +51,14 @@ export default {
   min-width: 100%;
   z-index: 1024;
   box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
-
+  
+  .nav {
+    border-bottom: 5px solid #ffbf00;
+    min-height: 100px;
+    .nav-item img{
+      max-height:4rem;
+    }
+  }
   .container {
     margin: auto 10px;
   }

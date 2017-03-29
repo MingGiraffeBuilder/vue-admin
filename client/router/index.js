@@ -4,7 +4,7 @@ import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash', // Demo is living in GitHub.io, so required!
+  mode: 'history',
   linkActiveClass: 'is-active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
@@ -12,6 +12,11 @@ export default new Router({
       name: 'Home',
       path: '/',
       component: require('../views/Home')
+    },
+    {
+      name: 'Your personal markup',
+      path: '/lovegevity/markup/:persona_type/:email',
+      component: require('../views/lovegevity/markup')
     },
     ...generateRoutesFromMenu(menuModule.state.items),
     {
