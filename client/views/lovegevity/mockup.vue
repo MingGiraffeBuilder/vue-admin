@@ -92,7 +92,7 @@ export default {
     }
   },
   beforeMount () {
-    this.params.business_name = this.$route.params.business_name.replace(/_/g, " ");
+    this.params.business_name = this.$route.params.business_name.replace(/_/g, ' ')
     this.params.persona_type = this.$route.params.persona_type
   },
   methods: {

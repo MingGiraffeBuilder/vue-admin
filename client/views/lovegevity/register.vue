@@ -152,10 +152,13 @@ export default {
     newClientRequest: function () {
       var jsonData = JSON.stringify(this.params)
       console.log(jsonData)
+      this.$el.querySelector('button.submit-btn').classList.add('is-loading')
       return this.$http.post(api, jsonData).then((response) => {
         console.log(response)
+        this.$el.querySelector('button.submit-btn').classList.remove('is-loading')
       }, function (err) {
         console.log(err)
+        this.$el.querySelector('button.submit-btn').classList.remove('is-loading')
       })
     }
   }
