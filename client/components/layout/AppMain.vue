@@ -1,6 +1,6 @@
 <template>
   <section class="app-main">
-    <div class="container is-fluid is-marginless app-content">
+    <div class="container is-fluid is-marginless is-paddingless app-content">
       <!--<levelbar></levelbar>-->
       <transition mode="out-in"
                   enter-active-class="fadeIn"
@@ -27,6 +27,7 @@ export default {
 @import '~bulma/sass/utilities/variables';
 @import '~bulma/sass/utilities/mixins';
 .app-main {
+  background-color: #fff;
   padding-top: 100px;
   margin: 0 auto;
   transform: translate3d(0, 0, 0);

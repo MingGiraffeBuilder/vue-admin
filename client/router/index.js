@@ -14,9 +14,9 @@ export default new Router({
       component: require('../views/Home')
     },
     {
-      name: 'Your personal markup',
-      path: '/lovegevity/markup/:persona_type/:email',
-      component: require('../views/lovegevity/markup')
+      name: 'Your personal mockup',
+      path: '/lovegevity/mockup/:persona_type/:username/:business_name',
+      component: require('../views/lovegevity/mockup')
     },
     ...generateRoutesFromMenu(menuModule.state.items),
     {
