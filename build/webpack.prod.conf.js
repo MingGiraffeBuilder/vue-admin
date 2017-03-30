@@ -51,13 +51,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'Vue Admin',
+      title: 'GiraffeBuilder Admin',
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
       template: 'index.html',
       inject: true,
-      favicon: 'client/assets/logo.png',
+      favicon: 'client/assets/logo-short.png',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
