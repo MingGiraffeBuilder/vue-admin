@@ -5,7 +5,7 @@
     </p>
 
     <h1 class="is-title is-bold">{{ name.replace('-', ' ') }}</h1>
-
+    
     <p>
       <strong>{{ description }}</strong>,
       <a :href="homepage">Live Demo</a>

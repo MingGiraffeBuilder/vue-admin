@@ -38,7 +38,7 @@ export default {
 
     document.addEventListener('visibilitychange', handler)
     window.addEventListener('DOMContentLoaded', handler)
-    window.addEventListener('resize', handler)
+    // window.addEventListener('resize', handler)
   },
 
   computed: mapGetters({
@@ -67,7 +67,16 @@ $fa-font-path: '~font-awesome/fonts/';
 $color-primary: #009bfd;
 $color-primary-hover: #33aaf5;
 html {
-  background-color: whitesmoke;
+  background-color: white;
+  height: 100%;
+  body {
+    height: 100%;
+  }
+}
+
+#app {
+  position: relative;
+  min-height: 100%;
 }
 
 a, .nav-item.hero-brand .vue{

@@ -27,8 +27,8 @@ export default {
 @import '~bulma/sass/utilities/variables';
 @import '~bulma/sass/utilities/mixins';
 .app-main {
-  background-color: #fff;
   padding-top: 100px;
+  padding-bottom: 200px;
   margin: 0 auto;
   transform: translate3d(0, 0, 0);
   @include mobile() {

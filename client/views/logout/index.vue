@@ -1,6 +1,6 @@
 <template>
   <div>
-  
+    
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4 is-vertical main-form">
         <article class="tile is-child">
@@ -14,22 +14,22 @@
                 </div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=1"
-                     v-on:mouseover="showPopupBox(1)"><img src="~assets/persona_types_1.jpg"></div>
+                     v-on:mouseover="showPopupBox(20, 1)"><img src="~assets/persona_types_1.jpg"></div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=2"
-                     v-on:mouseover="showPopupBox(2)"><img src="~assets/persona_types_2.jpg"></div>
+                     v-on:mouseover="showPopupBox(120, 2)"><img src="~assets/persona_types_2.jpg"></div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=3"
-                     v-on:mouseover="showPopupBox(3)"><img src="~assets/persona_types_3.jpg"></div>
+                     v-on:mouseover="showPopupBox(220,3)"><img src="~assets/persona_types_3.jpg"></div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=4"
-                     v-on:mouseover="showPopupBox(4)"><img src="~assets/persona_types_4.jpg"></div>
+                     v-on:mouseover="showPopupBox(330, 4)"><img src="~assets/persona_types_4.jpg"></div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=5"
-                     v-on:mouseover="showPopupBox(5)"><img src="~assets/persona_types_5.jpg"></div>
+                     v-on:mouseover="showPopupBox(430,5)"><img src="~assets/persona_types_5.jpg"></div>
                 <div class="persona-item"
                      v-on:click="params.persona_type=6"
-                     v-on:mouseover="showPopupBox(6)"><img src="~assets/persona_types_6.jpg"></div>
+                     v-on:mouseover="showPopupBox(550, 6)"><img src="~assets/persona_types_6.jpg"></div>
               </div>
   
             </p>
@@ -37,7 +37,7 @@
           </div>
           <div class="block">
             <h2 class="subtitle">
-                        2.Tell Us About Yourself</h2>
+                2.Tell Us About Yourself</h2>
   
             <div class="control is-grouped">
               <p class="control is-expanded">
@@ -84,8 +84,8 @@
                      required>
               <span class="icon is-small"
                     v-if="params.email !== confirmEmail">
-                              <i class="fa fa-warning"></i>
-                            </span>
+                      <i class="fa fa-warning"></i>
+                    </span>
               <span class="help is-danger"
                     v-if="params.email !== confirmEmail">Email doesn't match.</span>
             </p>
@@ -114,8 +114,8 @@
                      required>
               <span class="icon is-small"
                     v-if="params.password !== confirmPassword">
-                                                                        <i class="fa fa-warning"></i>
-                                                                      </span>
+                                                                <i class="fa fa-warning"></i>
+                                                              </span>
               <span class="help is-danger"
                     v-if="params.password !== confirmPassword">Password doesn't match.</span>
             </p>
@@ -140,32 +140,13 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Notification from 'vue-bulma-notification'
-import store from '../../store'
-import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
+import Cleave from 'vue-cleave'
+import 'cleave.js/dist/addons/cleave-phone.cn'
 
-const api = 'http://localhost:8000/accounts/register/'
-
-const NotificationComponent = Vue.extend(Notification)
-
-const openNotification = (propsData = {
-  title: '',
-  message: '',
-  type: '',
-  direction: '',
-  duration: 4500,
-  container: '.notifications'
-}) => {
-  return new NotificationComponent({
-    el: document.createElement('div'),
-    propsData
-  })
-}
-
+const api = 'http://admin.happyrenovate.com/accounts/register/'
 export default {
   components: {
-    Notification
+    Cleave
   },
   data () {
     return {
@@ -185,47 +166,26 @@ export default {
       persona_type_ready: 12
     }
   },
-  beforeRouteEnter: (to, from, next) => {
-    store.commit(TOGGLE_SIDEBAR, false)
-    next()
+  beforeMount () {
+    this.$parent.$parent.toggleSidebar(false)
   },
   methods: {
     newClientRequest: function () {
       var jsonData = JSON.stringify(this.params)
       console.log(jsonData)
-      if (this.params.persona_type === '') {
-        openNotification({
-          message: 'Please select 1 persona.',
-          type: 'warning',
-          duration: 4500
-        })
-      } else {
-        return this.$http.post(api, jsonData).then((response) => {
-          openNotification({
-            message: 'You submitted successfully!',
-            type: 'success',
-            duration: 4500
-          })
-          console.log(response)
-        }, err => {
-          console.log(err.response.data)
-          let message = 'You submitted unsuccessfully! Error: '
-          for (const key of Object.keys(err.response.data)) {
-            message += key + ': ' + err.response.data[key] + ' '
-          }
-          openNotification({
-            message: message,
-            type: 'danger',
-            duration: 4500
-          })
-        })
-      }
+      this.$el.querySelector('button.submit-btn').classList.add('is-loading')
+      return this.$http.post(api, jsonData).then((response) => {
+        console.log(response)
+        this.$el.querySelector('button.submit-btn').classList.remove('is-loading')
+      }, function (err) {
+        console.log(err)
+        this.$el.querySelector('button.submit-btn').classList.remove('is-loading')
+      })
     },
 
-    showPopupBox: function (selection) {
+    showPopupBox: function (position, selection) {
       document.getElementById('popup-box').style.visibility = 'visible'
       this.persona_type_ready = selection
-      document.getElementById('popup-box').style.transform = 'translateX(' + (selection * 70 - 114) + 'px)'
     },
 
     hidePopupBox: function () {
@@ -244,6 +204,7 @@ export default {
   z-index: 1;
   position: absolute;
   padding-top: 14px;
+  padding-left: 16px;
   visibility: hidden;
 }
 

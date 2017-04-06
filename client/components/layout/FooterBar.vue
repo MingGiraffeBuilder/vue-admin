@@ -27,6 +27,9 @@ export default {
 @import '~bulma/sass/utilities/mixins';
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   // margin-left: 180px;
   padding: 1.5rem;
   border-top: 3px solid #cccccc;

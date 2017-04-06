@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import menuModule from 'vuex-store/modules/menu'
+import store from '../store'
+import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 Vue.use(Router)
 
 export default new Router({
@@ -14,9 +16,18 @@ export default new Router({
       component: require('../views/Home')
     },
     {
+      name: 'Login',
+      path: '/lovegevity/login',
+      component: require('../views/auth/login')
+    },
+    {
       name: 'Your personal mockup',
       path: '/lovegevity/mockup/:persona_type/:username/:business_name',
-      component: require('../views/lovegevity/mockup')
+      component: require('../views/lovegevity/mockup'),
+      beforeEnter: (route, redirect, next) => {
+        store.commit(TOGGLE_SIDEBAR, false)
+        next()
+      }
     },
     ...generateRoutesFromMenu(menuModule.state.items),
     {

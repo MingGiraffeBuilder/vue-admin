@@ -1,9 +1,9 @@
 import * as types from '../../mutation-types'
 import lazyLoading from './lazyLoading'
-import charts from './charts'
-import uifeatures from './uifeatures'
-import components from './components'
-import tables from './tables'
+// import charts from './charts'
+// import uifeatures from './uifeatures'
+// import components from './components'
+// import tables from './tables'
 import lovegevity from './lovegevity'
 
 // show: meta.label -> name
@@ -21,20 +21,16 @@ const state = {
       },
       component: lazyLoading('dashboard', true)
     },
-    {
-      name: 'Axios',
-      path: '/axiosDemo',
-      meta: {
-        icon: 'fa-rocket',
-        link: 'axios/index.vue'
-      },
-      component: lazyLoading('axios', true)
-    },
     lovegevity,
-    charts,
-    uifeatures,
-    components,
-    tables
+    {
+      name: 'logout',
+      path: '/logout',
+      meta: {
+        icon: 'fa-sign-out',
+        link: 'logout/index.vue'
+      },
+      component: lazyLoading('logout', true)
+    }
   ]
 }
 

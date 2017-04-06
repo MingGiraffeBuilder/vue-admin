@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
 import NProgress from 'vue-nprogress'
-import VueResource from 'vue-resource'
 import VueValidator from 'vue-validator'
 import { sync } from 'vuex-router-sync'
 import App from './App.vue'
@@ -12,10 +11,9 @@ import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 
 Vue.prototype.$http = axios
 Vue.axios = axios
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 Vue.use(VueValidator)
 Vue.use(NProgress)
-Vue.use(VueResource)
-Vue.http.headers.common['Content-Type'] = 'application/json'
 
 // Enable devtools
 Vue.config.devtools = true
