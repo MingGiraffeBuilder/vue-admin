@@ -32,7 +32,11 @@ export default new Router({
     ...generateRoutesFromMenu(menuModule.state.items),
     {
       path: '*',
-      redirect: '/'
+      redirect: '/lovegevity/login',
+      beforeEnter: (route, redirect, next) => {
+        store.commit(TOGGLE_SIDEBAR, true)
+        next()
+      }
     }
   ]
 })

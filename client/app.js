@@ -12,6 +12,7 @@ import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 Vue.prototype.$http = axios
 Vue.axios = axios
 axios.defaults.headers.post['Content-Type'] = 'application/json'
+// axios.defaults.headers.common['Authorization'] = 'Token ' + window.localStorage.token
 Vue.use(VueValidator)
 Vue.use(NProgress)
 
@@ -24,7 +25,7 @@ const nprogress = new NProgress({ parent: '.nprogress-container' })
 
 const { state } = store
 
-router.beforeEach((route, redirect, next) => {
+router.beforeEach((to, from, next) => {
   if (state.app.device.isMobile && state.app.sidebar.opened) {
     store.commit(TOGGLE_SIDEBAR, false)
   }

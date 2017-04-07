@@ -37,7 +37,7 @@ export default {
     }
 
     document.addEventListener('visibilitychange', handler)
-    window.addEventListener('DOMContentLoaded', handler)
+    // window.addEventListener('DOMContentLoaded', handler)
     // window.addEventListener('resize', handler)
   },
 

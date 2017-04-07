@@ -9,12 +9,12 @@ export default {
 
   children: [
     {
-      name: 'Register',
-      path: '/lovegevity/register/',
+      name: 'Submit content',
+      path: '/lovegevity/submit-content/',
       meta: {
-        link: 'lovegevity/register.vue'
+        link: 'lovegevity/submitContent.vue'
       },
-      component: lazyLoading('lovegevity/register')
+      component: lazyLoading('lovegevity/submitContent')
     }
   ]
 }

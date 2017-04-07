@@ -141,8 +141,8 @@
 
 <script>
 import Vue from 'vue'
-import Notification from 'vue-bulma-notification'
 import store from '../../store'
+import Notification from 'vue-bulma-notification'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 
 const api = 'http://localhost:8000/accounts/register/'
