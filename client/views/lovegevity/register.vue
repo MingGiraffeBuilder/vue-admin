@@ -225,7 +225,7 @@ export default {
     showPopupBox: function (selection) {
       document.getElementById('popup-box').style.visibility = 'visible'
       this.persona_type_ready = selection
-      document.getElementById('popup-box').style.transform = 'translateX(' + (selection * 70 - 114) + 'px)'
+      document.getElementById('popup-box').style.transform = 'translateX(' + (selection * 90 - 114) + 'px)'
     },
 
     hidePopupBox: function () {

@@ -21,6 +21,11 @@ export default new Router({
       component: require('../views/auth/login')
     },
     {
+      name: 'Register',
+      path: '/lovegevity/register',
+      component: require('../views/lovegevity/register')
+    },
+    {
       name: 'Your personal mockup',
       path: '/lovegevity/mockup/:persona_type/:username/:business_name',
       component: require('../views/lovegevity/mockup'),
