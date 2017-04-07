@@ -145,7 +145,7 @@ import store from '../../store'
 import Notification from 'vue-bulma-notification'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 
-const api = 'http://localhost:8000/accounts/register/'
+const api = 'http://admin.happyrenovate.com/accounts/register/'
 
 const NotificationComponent = Vue.extend(Notification)
 

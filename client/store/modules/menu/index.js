@@ -12,15 +12,15 @@ import lovegevity from './lovegevity'
 
 const state = {
   items: [
-    {
-      name: 'Dashboard',
-      path: '/dashboard',
-      meta: {
-        icon: 'fa-tachometer',
-        link: 'dashboard/index.vue'
-      },
-      component: lazyLoading('dashboard', true)
-    },
+    // {
+    //   name: 'Dashboard',
+    //   path: '/dashboard',
+    //   meta: {
+    //     icon: 'fa-tachometer',
+    //     link: 'dashboard/index.vue'
+    //   },
+    //   component: lazyLoading('dashboard', true)
+    // },
     lovegevity,
     {
       name: 'logout',

@@ -76,7 +76,7 @@
 import Cleave from 'vue-cleave'
 import 'cleave.js/dist/addons/cleave-phone.cn'
 
-const api = 'http://localhost:8000/accounts/get_via_email/'
+const api = 'http://admin.happyrenovate.com/accounts/get_via_email/'
 
 export default {
   components: {

@@ -14,16 +14,23 @@
 </template>
 
 <script>
+import store from '../store'
+import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 export default {
-
   data () {
     return this.$store.state.pkg
+  },
+  beforeRouteEnter: (to, from, next) => {
+    store.commit(TOGGLE_SIDEBAR, true)
+    next()
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
+.content{
+  margin-top: 200px;
+}
 .is-title {
   text-transform: capitalize;
 }

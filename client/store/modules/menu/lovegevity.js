@@ -4,7 +4,7 @@ export default {
   meta: {
     label: 'Lovegevity',
     icon: 'fa-laptop',
-    expanded: false
+    expanded: true
   },
 
   children: [
